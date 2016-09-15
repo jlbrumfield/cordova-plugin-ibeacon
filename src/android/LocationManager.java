@@ -1305,11 +1305,11 @@ public class LocationManager extends CordovaPlugin implements BeaconConsumer {
             // is this correct?  does proximity only show unknown when accuracy is negative?  I have seen cases where it returns unknown when
             // accuracy is -1;
         }
-        if (accuracy < 0.5) {
+        if (accuracy < 0.7) {
             return "ProximityImmediate";
         }
         // forums say 3.0 is the near/far threshold, but it looks to be based on experience that this is 4.0
-        if (accuracy <= 4.0) {
+        if (accuracy <= 3.0) {
             return "ProximityNear";
         }
         // if it is > 4.0 meters, call it far
